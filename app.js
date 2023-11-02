@@ -17,7 +17,12 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://http://127.0.0.1:5500",
+    //origin: "*",  Allowing all origins
+  })
+  );
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public')); // Serve files from the 'public' directory

@@ -41,6 +41,14 @@ signupBtn.onclick = async function (event) {
         axios.post('http://localhost:9000/user/signup', user)
             .then(response => {
                 console.log('Signup successful');
+                if (response.data.success === true) {
+                    alert('Successfully signed up');
+                }
+
+                if (response.data.success === false && response.status === 200) {
+                    alert('User already exists, Please Login');
+                }
+
             })
             .catch(err => {
                 console.log("Error axios:", err.response);
