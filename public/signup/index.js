@@ -76,7 +76,7 @@ signupBtn.onclick = async function (event) {
 
 
 
-signinBtn.onclick = function(event){
+signinBtn.onclick = function (event) {
     event.preventDefault(event);
     nameField.style.maxHeight = "0";
     phoneField.style.maxHeight = "0";
@@ -87,14 +87,44 @@ signinBtn.onclick = function(event){
 
     const email = inputEmail.value;
     const password = inputPassword.value;
-    
-    const obj = {email, password};
 
-    if(!email || !password){
+    const obj = { email, password };
+
+    if (!email || !password) {
         return;
     }
+
+    try {
+        axios.post('http://localhost:9000/user/signin', obj)
+            .then(res => {
+                console.log('Signin successful', res.data);
+
+                if (res.status === 200 && response.data.success === true) {
+                    localStorage.setItem('token', res.data.token);
+                    window.location.href = "#";
+                }
+                else {
+                    alert(response.data.message);
+                }
+            })
+            .catch(err => {
+                console.log("Error axios:", err.response);
+                if (err.response && err.response.status === 400 && err.response.data === 'Email already registered') {
+                    const modal = document.getElementById("modal");
+                    const modalmsg = document.getElementById("modalmsg");
+                    modal.style.display = "block";
+                    modalmsg.textContent = `${email} is already registered with Catch`;
+
+                } else {
+                    console.error('Signin failed', err);
+                }
+
+            })
+
+    }
+    catch (err) { console.log("Error during signin", err) }
 }
-    
+
 
 
 
