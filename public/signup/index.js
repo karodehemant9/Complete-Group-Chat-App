@@ -73,6 +73,37 @@ signupBtn.onclick = async function (event) {
 
 
 
+
+
+
+signinBtn.onclick = function(event){
+    event.preventDefault(event);
+    nameField.style.maxHeight = "0";
+    phoneField.style.maxHeight = "0";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+
+    err.style.display = "none";
+
+    const email = inputEmail.value;
+    const password = inputPassword.value;
+    
+    const obj = {email, password};
+
+    if(!email || !password){
+        return;
+    }
+}
+    
+
+
+
+
+
+
+
+
+
 function closeModal() {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
