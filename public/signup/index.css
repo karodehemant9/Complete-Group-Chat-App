@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+ body{
+    background-color: #fcf5eb;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} 
+
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    /* z -1 for placing the background behined other content */
+}
+
+
+.background-container img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(0,0,50,0.8), rgba(0,0,50,0.8), url('images/signup.jpg')); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.container h1{
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    /* margin-bottom: 60px; */
+    color: #c425d3;
+    position: relative;
+    text-align: center;
+    /* padding: 25px; */
+    padding-top: 3cqmin;
+    margin-bottom: 0;
+    margin: 0;
+    bottom: 25%;
+    z-index: 1;
+    top: -20px;
+    margin-top: 10px;
+    
+
+}
+.container h5{
+    font-size: 20px;
+    /* font-family: 'Poppins', sans-serif; */
+    /* margin-bottom: 60px; */
+    color: #c425d3;
+    position: relative;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+
+}
+
+.form-box{
+    /* width: 100%; */
+    max-width: none;
+    width: 450px;
+    position: relative;
+    margin-top: 20px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.form-box h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #c425d3;
+    position: relative;
+    /* position: fixed; */
+
+}
+
+.form-box h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #c425d3;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field{
+    background:#f8f6f6 ;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.3s;
+    overflow: hidden;
+}
+
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 21px 18px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #9999;
+    
+}
+
+form p{
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+form p a{
+    text-decoration: none;
+    color: #c425d3;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-field{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-field button {
+    flex-basis: 48%;
+    background: #c425d3;
+    color: #fff;
+    height: 45px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    transition: background 1s;
+}
+
+.input-group{
+    /* height: 280px; */
+}
+
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;    
+}
+
+#errMessage{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #c425d3;
+    text-align: center;
+    animation: animate 1.5s linear infinite;
+
+}
+ 
+  @keyframes animate {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+ 
+/* Styles for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #fdfafa;
+    background-color: #c425d3;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    
+}
+
+
+.close:hover {
+    background-color: #6d085e; /* Hover color */
+    color: #fff; /* Text color on hover */
+}
+
+/* Add a nice animation effect to the modal */
+.modal-content {
+    animation: scale-up 0.2s ease;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
