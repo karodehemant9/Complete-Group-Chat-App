@@ -1,0 +1,352 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #ee5555;
+
+}
+
+.main{
+    display: flex;
+    /* height: 100%; */
+    min-height: 100vh;
+    /* max-height: 100vh; */
+    width: 100%;
+    margin-top: 5px;
+    background-color: #f8f2f2;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    /* overflow: hidden; */
+    
+}
+
+.group{
+    height: 100vh;
+    width: 25%;
+    border: 1px solid #e4e1e1;
+    border-right: 1px solid #e4e1e1;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 10px 0 0 10px;
+}
+.grouplogo{
+    margin-left: -10px;
+    font-size: medium;
+}
+
+.chatscreen{
+    border: 1px solid #e4e1e1;
+    border-radius: 10px;
+    border-right: none;
+    height: 100vh;
+    width: 79.75%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fefcfc;
+    background:#f9f9f9;
+    /* overflow: scroll; */
+
+}
+.chatscreen .header, .group .groupheader {
+    background: #f3f0f0;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-bottom: 1px solid #f43e3e;
+    border-radius: 0px 0 0px 0px;
+    z-index: 1;
+
+
+}
+
+.chatscreen .header{
+    border-radius: 0px 10px 0px 0px;
+    position: relative;
+}
+
+.group .groupheader{
+    border-radius: 10px 0px 0px 0px;
+
+}
+
+.newgrouplist{
+    background: #ffffff;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-bottom: 1px solid #eee;
+    border-radius: 0px 0 0px 0px;
+    z-index: 1;
+}
+.newgrouplist:hover{
+    background-color:#f9f9f9;
+}
+
+
+.chatscreen .header .logo,.group .groupheader .grouplogo {
+    font-size: 25px;
+    color: #000000ba;
+    font-weight: 600;
+
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+#groupbtn {
+    background-color: #28D146;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: -10px;
+
+}
+
+#userlistpane{
+    display:none;
+    background-color: #fff;
+    border: 1px solid #e5d7d7 ;
+    box-shadow: 0 0 10px 10px rgb(125, 130, 125, 0.1);
+    height: 500px;
+    width: 550px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 2;
+    top: 60px;
+}
+
+.show{
+    display:block !important;
+}
+
+
+ #exitchatbtn {
+    background-color: #28D146;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 5px;
+
+}
+#groupbtn:hover, #exitchatbtn:hover{
+    background-color:#2c6b14;
+}
+
+
+.messages {
+    flex: 1; 
+    overflow-y: auto; 
+    background-color: rgba(250, 250, 250, 0);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 800px;  
+    /* overflow: hidden; */
+   
+}
+
+.my-message{
+    margin: 10px;
+    padding: 10px;
+    background-color: #a0f3af;
+    border-radius: 10px 10px 10px 10px;
+    float: right;
+    clear: both;
+    margin-right: 50px;
+    margin-left: 400px;
+    min-width: 200px;
+    max-width: 600px;
+
+}
+
+.other-message{
+    
+    background-color: rgb(239, 237, 241);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    clear: both;
+    margin-left: 50px;
+    margin-right: 400px;
+    min-width: 250px;
+    max-width: 600px;
+    
+
+}
+
+.update {
+    font-style: italic;
+    padding: 0px;
+    margin-left: 10px;
+    float: left;
+    clear: both;
+    margin-left: 50px;    
+}
+
+
+.name{
+    margin-top: 0px;
+    color: rgb(7, 136, 22);
+    font-weight: bold;
+    font-size: 12px;
+}
+.sender{
+    margin-top: 0px;
+    color:  rgb(125, 130, 125);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+
+
+.typebox{
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 2px solid #ef3b3b;
+    padding: 5px;
+    height: 80px;
+    margin-bottom: 0px;
+    
+
+}
+
+
+
+
+
+
+#messageinput {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none; /* Remove default input focus outline */
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 35px;
+    background-color: #fcf2f2;
+}
+
+#sendbutton{
+
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-bottom: 35px;
+}
+
+#sendfilebtn {
+
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 35px;
+}
+
+#sendbutton:hover, #sendfilebtn:hover {
+    color: #28D146;
+    
+}
+
+.btn {
+    
+    font-size: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    background-color: rgb(196, 236, 204);
+    border: 1px solid rgb(116, 225, 114);
+}
+.btn:hover{
+    background-color: #28D146;
+    color: #fff;
+}
+
+.userlist{
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+    margin-left: 20px;
+    /* padding-top: 40px; */
+    padding-bottom: 40px;
+
+}
+
+.adduserinput{
+    border: 1px solid rgb(116, 225, 114);
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 45px;
+}
+
+ #adduserbtn{
+    margin-left: 5px;
+    margin-bottom: 30px;
+    margin-top: 26px;
+    color: rgb(38, 131, 52);
+
+}
+#adduserbtn:hover{
+    color: #fff;
+}
+
+#exitgroupbtn {
+    margin-left: 5px;
+    margin-bottom: 30px;
+    margin-top: 26px;
+    color:  rgba(219, 46, 46, 0.992);
+    background-color: #fff;
+    border: 1px solid rgb(176, 54, 54);
+}
+
+#deletegroupbtn {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 26px;
+    color:  rgba(219, 46, 46, 0.992);
+    background-color: #fff;
+    border: 1px solid rgb(176, 54, 54);
+}
+
+#exitgroupbtn:hover, #deletegroupbtn:hover{
+    background-color: #d12828;
+    color: #fff;
+}
+
+#removeuser{
+    color:  rgba(219, 46, 46, 0.992);
+    background-color: #fff;
+    border: 1px solid rgb(176, 54, 54);
+}
+
+#removeuser:hover{
+    background-color: #d12828;
+    color: #fff;
+}

@@ -19,10 +19,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://http://127.0.0.1:5500",
+    origin: "http://127.0.0.1:5500",
     //origin: "*",  Allowing all origins
   })
-  );
+);
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public')); // Serve files from the 'public' directory
@@ -33,8 +35,8 @@ app.use('/user', userRoutes);
 
 app.use((req, res, next) => {
   // Check if the request URL is not the desired URL.
-  if (req.originalUrl !== '/index/index.html') {
-    return res.redirect('http://localhost:9000/index/index.html');
+  if (req.originalUrl !== '/login/login.html') {
+    return res.redirect('http://localhost:9000/login/login.html');
   }
   // If the request URL is the desired URL, proceed to the next middleware.
   next();

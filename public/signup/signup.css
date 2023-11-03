@@ -162,8 +162,8 @@ form p a{
 
 .btn-field button {
     flex-basis: 48%;
-    background: #c425d3;
-    color: #fff;
+    background: #eaeaea;
+    color: #555;
     height: 45px;
     border-radius: 20px;
     border: 0;
@@ -174,13 +174,18 @@ form p a{
     transition: background 1s;
 }
 
-.input-group{
-    /* height: 280px; */
+
+
+#signinBtn:hover{
+    background: #c425d3;
+    color: #fff;
+   
 }
 
-.btn-field button.disable{
-    background: #eaeaea;
-    color: #555;    
+#signupBtn:hover{
+    background: #c425d3;
+    color: #fff;
+
 }
 
 #errMessage{
