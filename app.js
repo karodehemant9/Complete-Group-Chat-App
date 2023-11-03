@@ -8,10 +8,11 @@ const sequelize = require('./util/database');
 
 
 const User = require('./models/user');
-
+const Message = require('./models/message');
 
 
 const userRoutes = require('./routes/user');
+const messageRoutes = require('./routes/message');
 
 
 const app = express();
@@ -31,6 +32,8 @@ app.use(express.static('public')); // Serve files from the 'public' directory
 
 
 app.use('/user', userRoutes);
+app.use('/', messageRoutes);
+
 
 
 app.use((req, res, next) => {
@@ -44,7 +47,8 @@ app.use((req, res, next) => {
 
 
 
-
+User.hasMany(Message);
+Message.belongsTo(User);
 
 
 

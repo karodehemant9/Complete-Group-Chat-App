@@ -49,11 +49,13 @@ async function signin(e) {
 
                 if (res.status === 200 && response.data.success === true) {
                     localStorage.setItem('token', res.data.token);
+                    localStorage.setItem('userId', res.data.userId);
+                    localStorage.setItem('user', res.data.name);
                     //redirecting to signup page
                     const destinationURL = "../chat/chat.html";
                     // Redirect to the destination page
                     window.location.href = destinationURL;
-                    
+
                 }
                 else {
                     alert(response.data.message);

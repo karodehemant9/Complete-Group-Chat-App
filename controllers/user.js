@@ -12,7 +12,6 @@ function generateAccessToken(id) {
   return jwt.sign({ userID: id }, encryptionKey)
 }
 
-exports.secretKey = encryptionKey;
 
 
 
