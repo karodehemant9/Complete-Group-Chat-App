@@ -1,4 +1,3 @@
-const socket = io('http://localhost:3000')
 const token = localStorage.getItem('token')
 let activeGroupId = localStorage.getItem('activeGroupId');
 let userId = localStorage.getItem('userId');
@@ -7,6 +6,7 @@ let userId = localStorage.getItem('userId');
 
 
 window.addEventListener('DOMContentLoaded', function () {
+    getAllMessagesFromDB();
     document.getElementById('sendbutton').addEventListener('click', async (e) => {
         e.preventDefault();
         sendMessageToServer();
