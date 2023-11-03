@@ -2,11 +2,10 @@ const token = localStorage.getItem('token')
 let activeGroupId = localStorage.getItem('activeGroupId');
 let userId = localStorage.getItem('userId');
 
-
+setInterval(getAllMessagesFromDB, 1000)
 
 
 window.addEventListener('DOMContentLoaded', function () {
-    getAllMessagesFromDB();
     document.getElementById('sendbutton').addEventListener('click', async (e) => {
         e.preventDefault();
         sendMessageToServer();
@@ -114,5 +113,3 @@ function clearMessages() {
     const chatMessages = document.querySelector(".messages");
     chatMessages.innerHTML = '';
 }
-
-
