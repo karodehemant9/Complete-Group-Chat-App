@@ -1,18 +1,20 @@
 const express = require('express');
 const groupController = require('../controllers/groupController');
-const authMiddleware = require('../middleware/authenticate');
+const authenticateUser = require('../middleware/auth');
 
 const router = express.Router();
 
 
-router.post('/createGroup', authMiddleware.authenticate, groupController.createGroup);
-router.get('/fetchGroup/:id', authMiddleware.authenticate, groupController.fetchGroups);
-router.post('/addMember', authMiddleware.authenticate, groupController.addMember);
-router.get('/fetchGroupUsers/:id', authMiddleware.authenticate, groupController.fetchGroupUsers);
-router.delete('/deleteGroup/:activeGroupId', authMiddleware.authenticate, groupController.deleteGroup);
-router.delete('/exitGroup/:activeGroupId/:userId', authMiddleware.authenticate, groupController.exitGroup);
-router.post('/makeAdmin/:activeGroupId/:userId', authMiddleware.authenticate, groupController.makeAdmin);
-router.delete('/deleteMember/:activeGroupId/:userId', authMiddleware.authenticate, groupController.deleteMember);
+router.post('/createGroup', authenticateUser, groupController.createGroup);
+router.get('/fetchGroup/:id', authenticateUser, groupController.fetchUserGroups);
+router.get('/fetchGroupUsers/:id', authenticateUser, groupController.fetchGroupUsers);
+router.post('/makeAdmin/:activeGroupId/:userId', authenticateUser, groupController.makeAdmin);
+
+router.post('/addMember', authenticateUser, groupController.addMember);
+router.delete('/deleteMember/:activeGroupId/:userId', authenticateUser, groupController.deleteMember);
+
+router.delete('/exitGroup/:activeGroupId/:userId', authenticateUser, groupController.exitGroup);
+router.delete('/deleteGroup/:activeGroupId', authenticateUser, groupController.deleteGroup);
 
 
 
