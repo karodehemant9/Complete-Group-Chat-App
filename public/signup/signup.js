@@ -42,7 +42,7 @@ async function signup(event) {
     }
 
     try {
-        axios.post('http://localhost:9000/user/signup', user)
+        axios.post('http://localhost:4000/user/signup', user)
             .then(response => {
                 console.log('Signup successful');
                 if (response.data.success === true) {

@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-       <link rel="stylesheet" href="./chat.css">
+    <link rel="stylesheet" href="./chat.css">
 
 
 </head>
+
 <body>
-     <div class="container-fluid">
-         <div class="row">
-             <div class="col-12">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
                 <div class="main">
 
                     <div class="group">
                         <div class="groupheader">
-                            <div class="grouplogo">Chats</div>
-                            <button id="groupbtn" class="btn btn-success">Create</button>
+                            <!-- <div class="grouplogo" >Chats</div> -->
+                            
+                            <button id="groupbtn" class="btn btn-success">Create Group</button>
                             <!-- <i class="fa-solid fa-plus" id="groupbtn"></i> -->
                         </div>
-                        <div class="grouplist" id="grouplist"></div>
+                        <div class="grouplist" id="grouplist">
+                        </div>
                     </div>
+
+
 
                     <div class="chatscreen">
 
                         <div class="header">
-                            <div class="logo">Group</div>
-                            <div class= "hidden" id="userlistpane">
-                                <!-- <div class="paneheader" id="paneheader">Members</div> -->
+                            <div class="logo">Group Details</div>
+
+                            <div class="container mt-5" id='maindiv'>
+                                <form id="addFriendForm">
+                                    <div class="form-group">
+                                        <label for="email">Add a friend to group</label>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Enter Email ID">
+                                    </div>
+                                </form>
+                                <button id="add-friend-button">Add Friend</button>
+                                <button id="leave-group-button">Leave Group</button>
+                                <button id="delete-group-button">Delete Group</button>
                             </div>
+
                             <button id="exitchatbtn" class="btn btn-success">Log Out</button>
                         </div>
 
                         <div class="messages">
                             <div class="my-message">
-                                    <div class="name">You</div>
-                                    <div class="mytext">Hello</div>   
+                                <div class="name">You</div>
+                                <div class="mytext">Hello</div>
                             </div>
-                            <div class="update"> 
+
+                            <div class="update">
                                 sender joined the chat
                             </div>
+
                             <div class="other-message">
-                                    <div class="sender">Sender</div>
-                                    <div class="sendertext">Hi</div>
+                                <div class="sender">Sender</div>
+                                <div class="sendertext">Hi</div>
                             </div>
                         </div>
 
                         <div class="typebox">
-                                <i class="fa-brands fa-squarespace" id="sendfilebtn"></i>
-                                <input type="file" id="fileInput" style="display: none;">
-                                <input type="text" id="messageinput" class="form-control" placeholder="Send a message" >
-                                <i class="fa-regular fa-paper-plane" id="sendbutton"></i>
+                            <i class="fa-brands fa-squarespace" id="sendfilebtn"></i>
+                            <input type="file" id="fileInput" style="display: none;">
+                            <input type="text" id="messageinput" class="form-control" placeholder="Send a message">
+                            <i class="fa-regular fa-paper-plane" id="sendbutton"></i>
                         </div>
-                        
+
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
-     </div> 
-     
+    </div>
+
     <script src="https://kit.fontawesome.com/0bdc55090c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- <script  src="http://localhost:3000/socket.io/socket.io.js"></script> -->
-    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <!-- <script src="http://localhost:4000/socket.io/socket.io.js"></script> -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
     <script src="./chat.js"></script>
-
-     
 </body>
-
 </html>

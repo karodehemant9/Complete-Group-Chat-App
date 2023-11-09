@@ -43,14 +43,20 @@ async function signin(e) {
     }
 
     try {
-        axios.post('http://localhost:9000/user/signin', obj)
+        axios.post('http://localhost:4000/user/signin', obj)
             .then(res => {
-                console.log('Signin successful', res.data);
+                console.log('Signin successful');
+                console.log(res);
 
-                if (res.status === 200 && response.data.success === true) {
+
+                if (res.status === 200 && res.data.success === true) {
+                    console.log('token $$$$$$');
+                    
+                    console.log(res.data);
+                    
                     localStorage.setItem('token', res.data.token);
-                    localStorage.setItem('userId', res.data.userId);
-                    localStorage.setItem('user', res.data.name);
+                    localStorage.setItem('userId', res.data.user.id);
+                    localStorage.setItem('user', res.data.user.name);
                     //redirecting to signup page
                     const destinationURL = "../chat/chat.html";
                     // Redirect to the destination page
@@ -109,7 +115,7 @@ function forgetPasswordHandling(event) {
         const obj = { email: email }
 
         try {
-            const response = await axios.post("http://localhost:9000/password/forgot-password", obj)
+            const response = await axios.post("http://localhost:4000/password/forgot-password", obj)
 
             alert(`Link sent to ${email} to create new password`);
 

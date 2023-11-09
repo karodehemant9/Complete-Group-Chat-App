@@ -1,12 +1,16 @@
 const express = require('express');
-const messageController = require('../controllers/messageController');
+const messageController = require('../controllers/message');
 const authenticateUser = require('../middleware/auth');
+const multer = require('multer')
+const upload = multer()
 
 const router = express.Router();
 
 
-router.post('/sendMessage', authenticateUser, messageController.sendMessage);
-router.get('/getMessage/:groupId', authenticateUser, messageController.getMessage);
+router.post('/', authenticateUser, messageController.sendMessage);
+router.post('/uploadFile', authenticateUser, upload.single('file'), messageController.uploadFile);
+router.get('/:groupId', authenticateUser, messageController.getMessage);
+
 
 
 module.exports = router;
